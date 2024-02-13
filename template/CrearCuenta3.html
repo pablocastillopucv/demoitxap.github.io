@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8" />
+	<title>Crear Cuenta</title>
+	<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
+	<meta content="" name="description" />
+	<meta content="" name="author" />
+
+	<!-- ================== BEGIN core-css ================== -->
+	<link href="../assets/css/vendor.min.css" rel="stylesheet" />
+	<link href="../assets/css/default/app.min.css" rel="stylesheet" />
+	<!-- ================== END core-css ================== -->
+
+	<link href="css/styles.css" rel="stylesheet" />
+</head>
+
+<body>
+	<div id="app" class="app d-flex">
+		<div style="position: absolute; top: 5px; left: 50%; transform: translate(-50%, -50%); z-index: 5000;">
+			<a href="CrearCuenta2.html">← Anterior</a>
+			|
+			<a href="CrearCuenta4.html">Siguiente →</a>
+		</div>
+	
+		<div class="col-xl-5 col-lg-5 col-md-6">
+			<div id="header" class="app-header">
+				<div class="navbar-header">
+					<a href="index.html" class="navbar-brand py-1"><img src="img/logo.png" height="65px" alt=""></a>
+				</div>
+
+				<div class="navbar-nav">
+					<div class="navbar-item navbar-user dropdown">
+						<a class="navbar-link dropdown-toggle d-flex align-items-center" data-bs-toggle="dropdown">
+							<span class="d-none d-md-inline">Español</span> <b class="caret ms-10px"></b>
+						</a>
+					</div>
+				</div>
+			</div>
+
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+
+			<div>
+				<center>
+					<div id="content" class="app-content removeMargins">
+						<h1 class="page-header" style="font-size: xx-large;">Crear una cuenta</h1>
+
+						<div class="nav-wizards-container">
+							<nav class="nav nav-wizards-1 mb-2 navWizardsColors">
+								<div class="nav-item col">
+									<a class="nav-link completed" href="CrearCuenta1.html">
+										<div class="nav-no">✓</div>
+										<div class="nav-text">Negocio</div>
+									</a>
+								</div>
+								<div class="nav-item col">
+									<a class="nav-link completed" href="CrearCuenta2.html">
+										<div class="nav-no">✓</div>
+										<div class="nav-text">Personal</div>
+									</a>
+								</div>
+								<div class="nav-item col">
+									<a class="nav-link completed">
+										<div class="nav-no"></div>
+										<div class="nav-text">Cuenta</div>
+									</a>
+								</div>
+							</nav>
+						</div>
+					</div>
+				</center>
+
+				<div>
+					<center>
+
+						<h5>Crea tu contraseña</h5>
+						<br>
+						<div style="width: 65%;" class="form-floating">
+							<div class="form-floating">
+								<input id="inp1" type="password" class="form-control fs-15px parsley-error"
+									placeholder="Prueba1201" value="Prueba1201">
+								<label for="inp1" class="d-flex align-items-center fs-13px">Contraseña</label>
+							</div>
+							<ul class="parsley-errors-list filled" id="parsley-id-5" aria-hidden="false">
+								<li class="parsley-required">Por favor, introduce una contaseña que cumpla con los
+									criterios
+									requeridos</li>
+							</ul>
+						</div>
+						<br>
+						<div style="width: 65%;" class="form-floating">
+							<div class="form-floating">
+								<input id="inp2" type="password" class="form-control fs-15px parsley-error"
+									placeholder="Prueba1201" value="Prueba1201">
+								<label for="inp2" class="d-flex align-items-center fs-13px">Confirmar contraseña</label>
+							</div>
+							<ul class="parsley-errors-list filled" id="parsley-id-5" aria-hidden="false">
+								<li class="parsley-required">Por favor, introduce una contaseña que cumpla con los
+									criterios
+									requeridos</li>
+							</ul>
+						</div>
+					</center>
+					<div style="width: 65%; margin: auto;" class="form-floating">
+						<p style="color: gray;">Pistas: la contraseña debe contener ⓘ</p>
+						<br>
+						<p>Al continuar con este proceso, reconoce que procesaremos datos personales de acuerdo con
+							nuestras <a href="">Políticas de privacidad</a> y <a href="">Términos de uso</a>.</p>
+					</div>
+					<center>
+						<br>
+						<button style="width: 65%; height: 43px;" class="btn btn-primary" onclick="window.location.href='CrearCuenta4.html'">CONTINUAR</button>
+					</center>
+				</div>
+			</div>
+		</div>
+
+		<div class="col-xl-7 col-lg-7 col-md-6 wavyBox" style="overflow: hidden;">
+			<img src="../assets/img/gallery/gallery-6.jpg" style="min-height: 100dvh;">
+		</div>
+	</div>
+</body>
+
+</html>

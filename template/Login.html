@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8" />
+	<title>Inicio de Sesión</title>
+	<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
+	<meta content="" name="description" />
+	<meta content="" name="author" />
+
+	<!-- ================== BEGIN core-css ================== -->
+	<link href="../assets/css/vendor.min.css" rel="stylesheet" />
+	<link href="../assets/css/default/app.min.css" rel="stylesheet" />
+	<!-- ================== END core-css ================== -->
+
+	<link href="css/styles.css" rel="stylesheet" />
+</head>
+
+<body>
+	<div id="app" class="app d-flex">
+		<div style="position: absolute; top: 5px; left: 50%; transform: translate(-50%, -50%); z-index: 5000;">
+			<a href="CrearCuenta4.html">← Anterior</a>
+			|
+			<a href="Home.html">Siguiente →</a>
+		</div>
+
+		<div class="col-xl-5 col-lg-5 col-md-6">
+			<div id="header" class="app-header">
+				<div class="navbar-header">
+					<a href="index.html" class="navbar-brand py-1"><img src="img/logo.png" height="65px" alt=""></a>
+				</div>
+
+				<div class="navbar-nav">
+					<div class="navbar-item navbar-user dropdown">
+						<a class="navbar-link dropdown-toggle d-flex align-items-center" data-bs-toggle="dropdown">
+							<span class="d-none d-md-inline">Español</span> <b class="caret ms-10px"></b>
+						</a>
+					</div>
+				</div>
+			</div>
+
+			<br>
+			<br>
+			<br>
+			<br>
+
+			<center>
+				<div id="content" class="app-content removeMargins">
+					<h1>Bienvenido a ITXAP</h1>
+					<br>
+					<h4>Inicie sesión con sus credenciales</h4>
+				</div>
+
+				<div>
+					<div style="width: 65%;" class="form-floating">
+						<input id="inp1" type="text" class="form-control fs-15px" placeholder="helasen559@robonera.com"
+							value="helasen559@robonera.com">
+						<label for="inp1" class="d-flex align-items-center fs-13px">Correo electrónico/nombre de
+							usuario</label>
+					</div>
+					<br>
+					<div style="width: 65%;" class="form-floating">
+						<input id="inp1" type="password" class="form-control fs-15px" value="11111111111">
+						<label for="inp1" class="d-flex align-items-center fs-13px">Contaseña</label>
+					</div>
+					<br>
+					<a href="" style="font-size: medium;">¿Ha olvidado su nombre de usuario/contraseña?</a>
+					<br>
+					<br>
+					<button style="width: 65%; height: 43px; font-size: medium;" class="btn btn-primary" onclick="window.location.href='CrearCuenta3.html'">Iniciar sesión</button>
+					<br>
+					<br>
+					<p style="font-size: medium;">¿No es miembro? <a href="">Ingresar</a></p>
+				</div>
+			</center>
+		</div>
+
+		<div class="col-xl-7 col-lg-7 col-md-6 wavyBox" style="overflow: hidden;">
+			<img src="../assets/img/gallery/gallery-6.jpg" style="min-height: 100dvh;">
+		</div>
+	</div>
+</body>
+
+</html>

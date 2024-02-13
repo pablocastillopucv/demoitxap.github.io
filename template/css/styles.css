@@ -1,0 +1,86 @@
+body {
+  background-color: white;
+}
+
+.removeMargins {
+  margin: 0px;
+}
+
+.navWizardsColors > div > a > .nav-no {
+  width: 20px !important;
+  height: 20px !important;
+  margin-top: 10px !important;
+}
+
+.navWizardsColors > div > a::before {
+  right: calc(50% + 10px) !important;
+}
+
+.navWizardsColors > div > a::after {
+  left: calc(50% + 10px) !important;
+  width: 50% !important;
+}
+
+.navWizardsColors > div > a.completed > .nav-no {
+  color: rgb(255, 255, 255) !important;
+  border-color: rgb(23, 60, 96) !important;
+  background: rgb(23, 60, 96) !important;
+}
+
+.navWizardsColors > div > a.completed > .nav-text {
+  color: rgb(23, 60, 96) !important;
+}
+
+.navWizardsColors > div > a.completed::before {
+  background: rgb(23, 60, 96) !important;
+}
+
+.navWizardsColors > div > a.completed::after {
+  background: rgb(23, 60, 96) !important;
+}
+
+.btn-primary {
+  border-color: rgb(23, 60, 96) !important;
+  background: rgb(23, 60, 96) !important;
+}
+
+.btn-outline-primary {
+  border-color: rgb(23, 60, 96) !important;
+  color: rgb(23, 60, 96) !important;
+}
+
+.btn-outline-primary:hover {
+  border-color: rgb(23, 60, 96) !important;
+  color: white !important;
+  background-color: rgb(23, 60, 96) !important;
+}
+
+.separacion {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: rgb(200, 200, 200);
+}
+
+.perfilCabecera {
+  font-size: 0.9em;
+  color: rgb(23, 60, 96);
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.perfilContenido {
+  font-weight: 600;
+  font-size: 1.2em;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  margin-bottom: 15px;
+}
+
+.wavyBox {
+  --mask:   radial-gradient(49.42vh at 56.2vh 75%, #000 99.8%, #0000 100.2%) 0 calc(50% - 48vh) / 100% 96vh,
+            radial-gradient(49.42vh at -43.2vh 75%, #0000 99.8%, #000 100.2%) 13vh 50%/100% 96vh repeat-y;
+  -webkit-mask: var(--mask);
+  mask: var(--mask);
+}

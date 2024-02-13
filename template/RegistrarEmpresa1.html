@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Registrar Empresa</title>
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
+    <meta content="" name="description" />
+    <meta content="" name="author" />
+
+    <!-- ================== BEGIN core-css ================== -->
+    <link href="../assets/css/vendor.min.css" rel="stylesheet" />
+    <link href="../assets/css/default/app.min.css" rel="stylesheet" />
+    <!-- ================== END core-css ================== -->
+
+    <link href="css/styles.css" rel="stylesheet" />
+</head>
+
+<body>
+    <div id="app" class="app app-header-fixed">
+        <div style="position: absolute; top: 5px; left: 50%; transform: translate(-50%, -50%); z-index: 5000;">
+            <a href="Perfil.html">← Anterior</a>
+            |
+            <a href="RegistrarEmpresa2.html">Siguiente →</a>
+        </div>
+
+        <div id="header" class="app-header shadow">
+            <div class="navbar-header">
+                <a href="index.html" class="navbar-brand py-1"><img src="img/logo.png" height="65px" alt=""></a>
+            </div>
+            <div class="d-flex align-items-center">
+                <span class="mx-3">Seguimiento</span>
+                <span class="mx-3">Configurar</span>
+                <span class="mx-3">Ayuda</span>
+            </div>
+
+            <div class="navbar-nav">
+                <div class="navbar-item navbar-form">
+                    <div class="form-group">
+                        <div class="input-group">
+                            <span class="input-group-text"><i class="fas fa-map-marker-alt"></i></span>
+                            <select class="form-select" name="" id="">
+                                <option value="">Select a Location</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="navbar-item navbar-user dropdown">
+                    <a href="#" class="navbar-link dropdown-toggle d-flex align-items-center" data-bs-toggle="dropdown">
+                        <div class="image image-icon bg-gray-800 text-gray-600">
+                            <i class="fa fa-user"></i>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="navbar-item dropdown">
+                    <a href="#" data-bs-toggle="dropdown" class="navbar-link dropdown-toggle fs-14px">
+                        <i class="fa fa-bell"></i>
+                        <span class="badge">0</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="content" class="app-content removeMargins">
+        <h1 class="page-header">Registrar empresa</h1>
+        <div class="nav-wizards-container">
+            <nav class="nav nav-wizards-1 mb-2 navWizardsColors">
+                <div class="nav-item col">
+                    <a class="nav-link completed">
+                        <div class="nav-no"></div>
+                        <div class="nav-text">Información de la empresa</div>
+                    </a>
+                </div>
+                <div class="nav-item col">
+                    <a class="nav-link">
+                        <div class="nav-no"></div>
+                        <div class="nav-text">Rol de la empresa</div>
+                    </a>
+                </div>
+                <div class="nav-item col">
+                    <a class="nav-link">
+                        <div class="nav-no"></div>
+                        <div class="nav-text">Proveedor de servicios</div>
+                    </a>
+                </div>
+                <div class="nav-item col">
+                    <a class="nav-link">
+                        <div class="nav-no"></div>
+                        <div class="nav-text">Información del identificador</div>
+                    </a>
+                </div>
+                <div class="nav-item col">
+                    <a class="nav-link">
+                        <div class="nav-no"></div>
+                        <div class="nav-text">Documentos</div>
+                    </a>
+                </div>
+                <div class="nav-item col">
+                    <a class="nav-link">
+                        <div class="nav-no"></div>
+                        <div class="nav-text">Revisar y enviar</div>
+                    </a>
+                </div>
+            </nav>
+        </div>
+        <div class="panel border">
+            <div class="panel-body">
+                <div class="p-2">
+                    <ol class="breadcrumb float-end">
+                        <i class="fa fa-angle-up" aria-hidden="true"></i>
+                    </ol>
+
+                    <div style="font-size: 1.1em;">
+                        <span style="color: rgb(23, 60, 96); font-weight: 600;">Información de la empresa</span> ⓘ
+                    </div>
+                    <div>
+                        <div style="display: grid; grid-template-columns: 1fr 3fr; column-gap: 10px;" class="my-2">
+                            <div class="form-floating">
+                                <input id="inp1" type="text" class="form-control fs-13px" value="AGA PRUEBA ITXAP">
+                                <label for="inp1" class="d-flex align-items-center fs-13px">Nombre de la
+                                    organización</label>
+                            </div>
+                            <div></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-2">
+                    <div style="font-size: 1.1em;">
+                        <span style="color: rgb(23, 60, 96); font-weight: 600;">Detalles de ubicación</span>
+                    </div>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; column-gap: 10px;" class="my-2">
+                        <div class="form-floating">
+                            <select id="inp2" class="form-select fs-13px">
+                                <option value="">Chile</option>
+                            </select>
+                            <label for="inp2" class="d-flex align-items-center fs-13px">País</label>
+                        </div>
+                        <div class="form-floating">
+                            <select id="inp3" class="form-select fs-13px">
+                                <option value="">Valparaiso</option>
+                            </select>
+                            <label for="inp3" class="d-flex align-items-center fs-13px">Estado / Provincia</label>
+                        </div>
+                        <div class="form-floating">
+                            <input id="inp4" type="text" class="form-control fs-13px" value="VIÑA DEL MAR">
+                            <label for="inp4" class="d-flex align-items-center fs-13px">Ciudad</label>
+                        </div>
+                        <div class="form-floating">
+                            <input id="inp5" type="text" class="form-control fs-13px">
+                            <label for="inp5" class="d-flex align-items-center fs-13px">Código postal / Número de
+                                apartad...</label>
+                        </div>
+                    </div>
+                    <div style="display: grid; grid-template-columns: 3fr 1fr; column-gap: 10px;" class="my-2">
+                        <div class="form-floating">
+                            <input id="inp6" type="text" class="form-control fs-13px" value="CALLE DOS NORTE">
+                            <label for="inp6" class="d-flex align-items-center fs-13px">Dirección</label>
+                        </div>
+                        <div class="form-floating">
+                            <select id="inp7" class="form-select fs-13px">
+                                <option value="">Sociedad Limitada (Ltd)</option>
+                            </select>
+                            <label for="inp7" class="d-flex align-items-center fs-13px">Tipo de negocio de la
+                                empresa</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-2">
+                    <div style="font-size: 1.1em;">
+                        <span style="color: rgb(23, 60, 96); font-weight: 600;">Detalles de contacto</span>
+                    </div>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr 2fr; column-gap: 10px;" class="my-2">
+                        <div class="form-floating">
+                            <input id="inp8" type="text" class="form-control fs-13px" value="helasen559@robonera.com">
+                            <label for="inp8" class="d-flex align-items-center fs-13px">Correo electrónico de la
+                                empresa</label>
+                        </div>
+                        <div style="display: grid; grid-template-columns: 1fr 3fr; column-gap: 10px;">
+                            <div class="form-floating">
+                                <select id="inp9" class="form-select fs-13px">
+                                    <option value="">+56</option>
+                                </select>
+                            </div>
+                            <div class="form-floating">
+                                <select id="inp10" class="form-select fs-13px">
+                                    <option value="">988009765</option>
+                                </select>
+                                <label for="inp10" class="d-flex align-items-center fs-13px">Número de contacto</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div style="font-size: 1.2em; color: rgb(23, 60, 96);" class="m-3">
+            <i class="fa fa-plus-circle"></i> AGREGAR OTRA...
+        </div>
+        <ol class="breadcrumb float-end">
+            <button class="btn btn-outline-primary mx-2">GUARDAR COMO BOR...</button>
+            <button class="btn btn-primary mx-2">SIGUIENTE</button>
+        </ol>
+        <div style="font-size: 1.2em;" class="m-3">
+            <i class="fa fa-arrow-left" aria-hidden="true"></i> VOLVER...
+        </div>
+    </div>
+</body>
+
+</html>
