@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Unit Approval</title>
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
+    <meta content="" name="description" />
+    <meta content="" name="author" />
+
+    <link href="../assets/css/vendor.min.css" rel="stylesheet" />
+    <link href="../assets/css/default/app.min.css" rel="stylesheet" />
+
+    <link href="css/styles.css" rel="stylesheet" />
+    <link rel="icon" href="data:,">
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            fetch("templates/AppHeader.html")
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById("headerContainer").innerHTML = data;
+                    includeFunctions();
+                });
+        });
+
+        function includeFunctions() {
+            var script = document.createElement('script');
+            script.src = 'js/functions.js';
+            document.body.appendChild(script);
+        }
+    </script>
+</head>
+
+<body style="background-color: rgb(243, 245, 247);">
+    <div id="headerContainer"></div>
+    <div id="sidebar" class="app-sidebar border-end border-secondary-subtle" data-bs-theme="light" style="z-index: 1;">
+        <div class="app-sidebar-content" data-scrollbar="true" data-height="100%">
+            <div class="menu">
+                <div class="menu-header" style="font-size: 1.15em; color: rgb(23, 60, 96); font-weight: 450;">Unit
+                    Approval</div>
+                <hr>
+                <div class="menu-header">Search</div>
+                <div class="menu-item active" style="margin: 0px 10px; border-left: solid rgb(23, 60, 96);">
+                    <a href="javascript:;" class="menu-link">
+                        <i class="fa-solid fa-hand-pointer me-2"></i>
+                        <div class="menu-text">Unit Approval</div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="content" class="app-content">
+        <h1 class="page-header">Unit Approval</h1>
+        <div style="display: grid; grid-template-columns: 5fr 3fr 3fr 1fr; column-gap: 15px;" class="my-3">
+            <div class="input-group">
+                <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-magnifying-glass"></i></span>
+                <input type="text" class="form-control" placeholder="Unit/Cntr/Trail#" aria-label="Username"
+                    aria-describedby="basic-addon1">
+            </div>
+
+            <div>
+                <select name="" id="" class="form-select">
+                    <option value="">Service Type</option>
+                </select>
+            </div>
+
+            <div>
+                <select name="" id="" class="form-select">
+                    <option value="">Awating Approval</option>
+                </select>
+            </div>
+            
+            <div class="btn-group" style="background-color: white;">
+                <button class="btn btn-primary">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+                <button class="btn btn-outline-secondary">
+                    <i class="fa-solid fa-bars-staggered"></i>
+                </button>
+                <button class="btn btn-outline-secondary">
+                    <i class="fa-solid fa-chevron-down"></i>
+                </button>
+            </div>
+        </div>
+        <div class="my-3">
+            <button class="btn btn-secondary rounded-pill" style="font-size: 0.85em;">
+                Process Status : Awating Approval
+                <i class="fa-solid fa-circle-xmark"></i>
+            </button>
+        </div>
+
+        <div style="background-color: white; border: solid rgb(206, 212, 218) 1px;">
+            <table class="table">
+                <thead style="font-weight: 700;">
+                    <td></td>
+                    <td><input type="checkbox"></td>
+                    <td>Unit/Cntr/Trail#</td>
+                    <td>BOL</td>
+                    <td>HBOL</td>
+                    <td>Service Type</td>
+                    <td>Delivery Type</td>
+                    <td><i class="fa-solid fa-snowflake"></i></td>
+                    <td><i class="fa-solid fa-diamond"></i></td>
+                    <td><i class="fa-solid fa-arrows-up-down-left-right"></i></td>
+                    <td><i class="fa-regular fa-hand" style="color: red;"></i></td>
+                    <td>Unit Status</td>
+                    <td>Process Status</td>
+                    <td></td>
+                </thead>
+                <tbody>
+                    <tr style="font-weight: 600; cursor: pointer;" onclick="window.location.href='UnitApproval2.html'">
+                        <td><i class="fa-solid fa-sort-down"></i></td>
+                        <td><input type="checkbox"></td>
+                        <td style="color: gray;">MSKU0716449</td>
+                        <td>MAEU233566959</td>
+                        <td>-</td>
+                        <td>FCL</td>
+                        <td>Indirect</td>
+                        <td><i class="fa-solid fa-snowflake" style="color: gainsboro;"></i></td>
+                        <td><i class="fa-solid fa-diamond" style="color: gainsboro;"></i></td>
+                        <td><i class="fa-solid fa-arrows-up-down-left-right" style="color: gainsboro;"></i></td>
+                        <td><i class="fa-regular fa-hand" style="color: red;"></i></td>
+                        <td style="color: green;">YARD</td>
+                        <td style="color: orange;">AWAITING APPROVAL</td>
+                        <td>
+                            <i class="fa-solid fa-x mx-2" style="color: red;"></i>
+                            <i class="fa-solid fa-check" style="color: green;"></i>
+                        </td>
+                    </tr>
+                    <tr style="font-weight: 600; cursor: pointer;" onclick="window.location.href='UnitApproval2.html'">
+                        <td><i class="fa-solid fa-sort-down"></i></td>
+                        <td><input type="checkbox"></td>
+                        <td style="color: gray;">MSMU2530114</td>
+                        <td>ZIMUXIA8352019</td>
+                        <td>-</td>
+                        <td>LCL</td>
+                        <td>Direct</td>
+                        <td><i class="fa-solid fa-snowflake" style="color: gainsboro;"></i></td>
+                        <td><i class="fa-solid fa-diamond" style="color: gainsboro;"></i></td>
+                        <td><i class="fa-solid fa-arrows-up-down-left-right" style="color: gainsboro;"></i></td>
+                        <td><i class="fa-regular fa-hand" style="color: red;"></i></td>
+                        <td style="color: red;">INBOUND</td>
+                        <td style="color: orange;">AWAITING APPROVAL</td>
+                        <td>
+                            <i class="fa-solid fa-x mx-2" style="color: red;"></i>
+                            <i class="fa-solid fa-check" style="color: green;"></i>
+                        </td>
+                    </tr>
+                    <tr style="font-weight: 600; cursor: pointer;" onclick="window.location.href='UnitApproval2.html'">
+                        <td><i class="fa-solid fa-sort-down"></i></td>
+                        <td><input type="checkbox"></td>
+                        <td style="color: gray;">CAAU6611006</td>
+                        <td>MAEU233243507</td>
+                        <td>-</td>
+                        <td>FCL</td>
+                        <td>Direct</td>
+                        <td><i class="fa-solid fa-snowflake" style="color: gainsboro;"></i></td>
+                        <td><i class="fa-solid fa-diamond" style="color: gainsboro;"></i></td>
+                        <td><i class="fa-solid fa-arrows-up-down-left-right" style="color: gainsboro;"></i></td>
+                        <td><i class="fa-regular fa-hand" style="color: red;"></i></td>
+                        <td style="color: red;">INBOUND</td>
+                        <td style="color: orange;">AWAITING APPROVAL</td>
+                        <td>
+                            <i class="fa-solid fa-x mx-2" style="color: red;"></i>
+                            <i class="fa-solid fa-check" style="color: green;"></i>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <div style="height: 45px;">
+                <li class="list-group-item" style="white-space: nowrap; margin-right: 5px;">
+                    <ol class="float-end d-flex" style="align-items: center;">
+                        <span>Rows per page: </span>
+                        <input class="form-control mx-2" type="number" value="10">
+                        <span>1 - 3 of 3</span>
+                        <i class="fa-solid fa-angle-left mx-2"></i>
+                        <i class="fa-solid fa-angle-right mx-2"></i>
+                    </ol>
+                </li>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

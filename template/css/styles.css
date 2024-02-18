@@ -78,9 +78,63 @@ body {
   margin-bottom: 15px;
 }
 
-.wavyBox {
-  --mask:   radial-gradient(49.42vh at 56.2vh 75%, #000 99.8%, #0000 100.2%) 0 calc(50% - 48vh) / 100% 96vh,
-            radial-gradient(49.42vh at -43.2vh 75%, #0000 99.8%, #000 100.2%) 13vh 50%/100% 96vh repeat-y;
+.demoWavyBox {
+  --mask: radial-gradient(49.42vh at 56.2vh 75%, #000 99.8%, #0000 100.2%) 0
+      calc(50% - 48vh) / 100% 96vh,
+    radial-gradient(49.42vh at -43.2vh 75%, #0000 99.8%, #000 100.2%) 13vh 50%/100%
+      96vh repeat-y;
   -webkit-mask: var(--mask);
   mask: var(--mask);
+}
+
+.demoNavLink {
+  color: white;
+}
+
+.demoNavLink:hover {
+  transition: 0.2s;
+  color: white;
+  background-color: rgb(47, 80, 110);
+  cursor: pointer;
+}
+
+.demoPanelHeading {
+  color: rgb(24, 61, 148);
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.demoNavItem {
+  height: 100%;
+  cursor: pointer;
+}
+
+.demoNavItemHover {
+  background-color: rgb(23, 60, 96);
+  color: white;
+}
+
+.demoNavItemContent {
+  display: none;
+}
+
+.demoShowItem {
+  display: block;
+}
+
+.demoPopup {
+  background-color: #edfaf4;
+  color: #33cc60;
+  padding: 20px 10px;
+  text-align: center;
+  font-size: 1.3em;
+  font-weight: 600;
+  position: fixed;
+  top: 25px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50%;
+  z-index: 2000;
+  opacity: 1;
+  transition: opacity 1s ease-in-out;
 }

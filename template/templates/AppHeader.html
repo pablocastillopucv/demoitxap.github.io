@@ -1,0 +1,79 @@
+<div id="app" class="app app-header-fixed">
+    <div id="header" class="app-header shadow">
+        <div class="navbar-header">
+            <a href="Home.html" class="navbar-brand py-1"><img src="img/logo.png" height="65px" alt=""></a>
+        </div>
+        <div class="d-flex align-items-center">
+            <div class="d-flex align-items-center demoNavItem" id="navItem1">
+                <span class="mx-3">Seguimiento</span>
+            </div>
+            <div class="d-flex align-items-center demoNavItem" id="navItem2">
+                <span class="mx-3">Configurar</span>
+            </div>
+            <div style="height: 100%;" class="d-flex align-items-center">
+                <span class="mx-3">Ayuda</span>
+            </div>
+        </div>
+        <div class="navbar-nav">
+            <div class="navbar-item navbar-form">
+                <div class="form-group">
+                    <div class="input-group">
+                        <span class="input-group-text"><i class="fas fa-map-marker-alt"></i></span>
+                        <select class="form-select" name="" id="">
+                            <option value="">Selecciona una ubicación</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="navbar-item navbar-user dropdown">
+                <a href="#" class="navbar-link dropdown-toggle d-flex align-items-center" data-bs-toggle="dropdown">
+                    <div class="image image-icon bg-gray-800 text-gray-600">
+                        <i class="fa fa-user"></i>
+                    </div>
+                </a>
+            </div>
+
+            <div class="navbar-item dropdown">
+                <a href="#" data-bs-toggle="dropdown" class="navbar-link dropdown-toggle fs-14px">
+                    <i class="fa fa-bell"></i>
+                    <span class="badge">0</span>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="demoNavItemContent" id="navItemContent1">
+        <div class="d-flex"
+            style="position: fixed; left: 180px; width: 40%; background-color: rgb(23, 60, 96); padding: 20px; z-index: 100;">
+            <div style="min-width: 150px;">
+                <div style="color: rgb(220, 117, 12);" class="mx-2 my-2">
+                    <span>EMBARQUE</span>
+                </div>
+                <div class="px-2 py-2 demoNavLink" id="linkUnitApproval">
+                    <span>Aprobación del documento del contenedor</span>
+                </div>
+            </div>
+            <div style="min-width: 150px;">
+                <div style="color: rgb(220, 117, 12);" class="mx-2 my-2">
+                    <span>REGISTRO</span>
+                </div>
+                <div class="px-2 py-2 demoNavLink" id="linkUserList">
+                    <span>Usuarios</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="demoNavItemContent" id="navItemContent2">
+        <div class="d-flex"
+            style="position: fixed; left: 280px; width: 40%; background-color: rgb(23, 60, 96); padding: 20px; z-index: 100;">
+            <div style="min-width: 150px;">
+                <div style="color: rgb(220, 117, 12);" class="mx-2 my-2">
+                    <span>USUARIO</span>
+                </div>
+                <div class="px-2 py-2 demoNavLink" id="linkPerfil">
+                    <span>Perfil</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

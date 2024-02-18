@@ -8,61 +8,32 @@
     <meta content="" name="description" />
     <meta content="" name="author" />
 
-    <!-- ================== BEGIN core-css ================== -->
     <link href="../assets/css/vendor.min.css" rel="stylesheet" />
     <link href="../assets/css/default/app.min.css" rel="stylesheet" />
-    <!-- ================== END core-css ================== -->
 
     <link href="css/styles.css" rel="stylesheet" />
+    <link rel="icon" href="data:,">
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            fetch("templates/AppHeader.html")
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById("headerContainer").innerHTML = data;
+                    includeFunctions();
+                });
+        });
+
+        function includeFunctions() {
+            var script = document.createElement('script');
+            script.src = 'js/functions.js';
+            document.body.appendChild(script);
+        }
+    </script>
 </head>
 
 <body>
-    <div id="app" class="app app-header-fixed">
-        <div style="position: absolute; top: 5px; left: 50%; transform: translate(-50%, -50%); z-index: 5000;">
-            <a href="RegistrarEmpresa6.html">← Anterior</a>
-            |
-            <a>Siguiente →</a>
-        </div>
-
-        <div id="header" class="app-header shadow">
-            <div class="navbar-header">
-                <a href="index.html" class="navbar-brand py-1"><img src="img/logo.png" height="65px" alt=""></a>
-            </div>
-            <div class="d-flex align-items-center">
-                <span class="mx-3">Seguimiento</span>
-                <span class="mx-3">Configurar</span>
-                <span class="mx-3">Ayuda</span>
-            </div>
-
-            <div class="navbar-nav">
-                <div class="navbar-item navbar-form">
-                    <div class="form-group">
-                        <div class="input-group">
-                            <span class="input-group-text"><i class="fas fa-map-marker-alt"></i></span>
-                            <select class="form-select" name="" id="">
-                                <option value="">Select a Location</option>
-                            </select>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="navbar-item navbar-user dropdown">
-                    <a href="#" class="navbar-link dropdown-toggle d-flex align-items-center" data-bs-toggle="dropdown">
-                        <div class="image image-icon bg-gray-800 text-gray-600">
-                            <i class="fa fa-user"></i>
-                        </div>
-                    </a>
-                </div>
-
-                <div class="navbar-item dropdown">
-                    <a href="#" data-bs-toggle="dropdown" class="navbar-link dropdown-toggle fs-14px">
-                        <i class="fa fa-bell"></i>
-                        <span class="badge">0</span>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
+    <div id="headerContainer"></div>
 
     <div id="content" class="app-content removeMargins">
         <h1 class="page-header">Registrar empresa</h1>
@@ -166,12 +137,11 @@
                                             <td>Customs Agents</td>
                                             <td>
                                                 <span class="px-3">
-                                                    <img src="img/DPWLogo.png" height="21px" alt=""> Chile Inland
-                                                    Services
+                                                    <img src="img/logo-puerto-angamos.png" height="21px" alt=""> Puerto
+                                                    Angamos
                                                 </span>
                                                 <span class="px-3">
-                                                    <img src="img/DPWLogo.png" height="21px" alt=""> DP World San
-                                                    Antonio
+                                                    <img src="img/logo-puerto-tgn.png" height="21px" alt=""> Puerto TGN
                                                 </span>
                                             </td>
                                         </tr>
@@ -280,14 +250,23 @@
                     <p>Nota: Una vez enviado, no se puede deshacer</p>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>
-                    <button type="button" class="btn btn-primary">Si</button>
+                    <button type="button" class="btn btn-secondary"
+                        onclick="window.location.href='RegistrarEmpresa6.html'">No</button>
+                    <button type="button" class="btn btn-primary" onclick="RegistrarEmpresa()">Si</button>
                 </div>
             </div>
         </div>
     </div>
 
     <div class="modal-backdrop fade show" style="z-index: 1020;"></div>
+
+    <script>
+        function RegistrarEmpresa() {
+            console.log("adasd");
+            localStorage.setItem("EmpresaRegistrada", "");
+            window.location.href = "Home.html";
+        }
+    </script>
 </body>
 
 </html>

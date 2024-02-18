@@ -8,61 +8,32 @@
     <meta content="" name="description" />
     <meta content="" name="author" />
 
-    <!-- ================== BEGIN core-css ================== -->
     <link href="../assets/css/vendor.min.css" rel="stylesheet" />
     <link href="../assets/css/default/app.min.css" rel="stylesheet" />
-    <!-- ================== END core-css ================== -->
 
     <link href="css/styles.css" rel="stylesheet" />
+    <link rel="icon" href="data:,">
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            fetch("templates/AppHeader.html")
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById("headerContainer").innerHTML = data;
+                    includeFunctions();
+                });
+        });
+
+        function includeFunctions() {
+            var script = document.createElement('script');
+            script.src = 'js/functions.js';
+            document.body.appendChild(script);
+        }
+    </script>
 </head>
 
 <body>
-    <div id="app" class="app app-header-fixed">
-        <div style="position: absolute; top: 5px; left: 50%; transform: translate(-50%, -50%); z-index: 5000;">
-            <a href="RegistrarEmpresa2.html">← Anterior</a>
-            |
-            <a href="RegistrarEmpresa4.html">Siguiente →</a>
-        </div>
-
-        <div id="header" class="app-header shadow">
-            <div class="navbar-header">
-                <a href="index.html" class="navbar-brand py-1"><img src="img/logo.png" height="65px" alt=""></a>
-            </div>
-            <div class="d-flex align-items-center">
-                <span class="mx-3">Seguimiento</span>
-                <span class="mx-3">Configurar</span>
-                <span class="mx-3">Ayuda</span>
-            </div>
-
-            <div class="navbar-nav">
-                <div class="navbar-item navbar-form">
-                    <div class="form-group">
-                        <div class="input-group">
-                            <span class="input-group-text"><i class="fas fa-map-marker-alt"></i></span>
-                            <select class="form-select" name="" id="">
-                                <option value="">Select a Location</option>
-                            </select>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="navbar-item navbar-user dropdown">
-                    <a href="#" class="navbar-link dropdown-toggle d-flex align-items-center" data-bs-toggle="dropdown">
-                        <div class="image image-icon bg-gray-800 text-gray-600">
-                            <i class="fa fa-user"></i>
-                        </div>
-                    </a>
-                </div>
-
-                <div class="navbar-item dropdown">
-                    <a href="#" data-bs-toggle="dropdown" class="navbar-link dropdown-toggle fs-14px">
-                        <i class="fa fa-bell"></i>
-                        <span class="badge">0</span>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
+    <div id="headerContainer"></div>
 
     <div id="content" class="app-content removeMargins">
         <h1 class="page-header">Registrar empresa</h1>
@@ -109,8 +80,19 @@
         <div class="panel border">
             <div class="panel-body">
                 <div class="p-2">
+                    <ol class="breadcrumb float-end">
+                        <i class="fa fa-angle-up" aria-hidden="true"></i>
+                    </ol>
                     <div style="font-size: 1.3em;">
-                        <span style="color: rgb(23, 60, 96); font-weight: 600;">Seleccione proveedor de servicios</span> ⓘ
+                        <span style="color: rgb(23, 60, 96); font-weight: 600;">Seleccione proveedor de servicios</span>
+                        ⓘ
+                    </div>
+                    <br>
+                    <ol class="breadcrumb float-end">
+                        <i class="fa-solid fa-filter"></i>
+                    </ol>
+                    <div style="font-size: 1.1em;">
+                        <span style="color: rgb(23, 60, 96); font-weight: 600;">Lista de proveedores de servicios</span>
                     </div>
                     <hr>
                     <div class="d-flex row">
@@ -128,71 +110,24 @@
                                 <label for="check" class="mx-2">Seleccionar todo</label>
                             </ol>
                             <div style="font-size: 1.2em;" class="align-items-center">
-                                <span style="color: rgb(23, 60, 96); font-weight: 600;">Proveedor de servicios (4)</span>
+                                <span style="color: rgb(23, 60, 96); font-weight: 600;">Proveedor de servicios
+                                    (2)</span>
                                 <button class="btn btn-primary rounded-pill mx-2">Chile</button>
-                            </div>  
-                            <div style="display: grid; grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr; gap: 30px;" class="my-2">
+                            </div>
+                            <div style="display: grid; grid-template-columns: 1fr 1fr 1fr 1fr 1fr; gap: 100px;"
+                                class="my-2 px-4 py-2">
                                 <div class="card text-center">
                                     <div class="card-body">
-                                        <i class="fa-regular fa-user" style="font-size: 2.5em;"></i>
+                                        <img src="img/logo-puerto-angamos.png" width="150px" alt="">
                                         <br><br>
-                                        <span style="font-weight: 600; font-size: 1.1em;">Beneficial Cargo <br> Owner</span>
+                                        <span style="font-weight: 600; font-size: 1.1em;">Puerto <br>Angamos</span>
                                     </div>
                                 </div>
                                 <div class="card text-center">
                                     <div class="card-body">
-                                        <i class="fa-regular fa-user" style="font-size: 2.5em;"></i>
+                                        <img src="img/logo-puerto-tgn.png" width="150px" alt="">
                                         <br><br>
-                                        <span style="font-weight: 600; font-size: 1.1em;">Container Freight <br>Station</span>
-                                    </div>
-                                </div>
-                                <div class="card text-center">
-                                    <div class="card-body">
-                                        <i class="fa-regular fa-user" style="font-size: 2.5em;"></i>
-                                        <br><br>
-                                        <span style="font-weight: 600; font-size: 1.1em;">Customs Agents</span>
-                                    </div>
-                                </div>
-                                <div class="card text-center">
-                                    <div class="card-body">
-                                        <i class="fa-regular fa-user" style="font-size: 2.5em;"></i>
-                                        <br><br>
-                                        <span style="font-weight: 600; font-size: 1.1em;">Empty Yard</span>
-                                    </div>
-                                </div>
-                                <div class="card text-center">
-                                    <div class="card-body">
-                                        <i class="fa-regular fa-user" style="font-size: 2.5em;"></i>
-                                        <br><br>
-                                        <span style="font-weight: 600; font-size: 1.1em;">Freight Forwarder</span>
-                                    </div>
-                                </div>
-                                <div class="card text-center">
-                                    <div class="card-body">
-                                        <i class="fa-regular fa-user" style="font-size: 2.5em;"></i>
-                                        <br><br>
-                                        <span style="font-weight: 600; font-size: 1.1em;">Importer / Exporter</span>
-                                    </div>
-                                </div>
-                                <div class="card text-center">
-                                    <div class="card-body">
-                                        <i class="fa-regular fa-user" style="font-size: 2.5em;"></i>
-                                        <br><br>
-                                        <span style="font-weight: 600; font-size: 1.1em;">Shipping agent</span>
-                                    </div>
-                                </div>
-                                <div class="card text-center">
-                                    <div class="card-body">
-                                        <i class="fa-regular fa-user" style="font-size: 2.5em;"></i>
-                                        <br><br>
-                                        <span style="font-weight: 600; font-size: 1.1em;">Shipping Line</span>
-                                    </div>
-                                </div>
-                                <div class="card text-center">
-                                    <div class="card-body">
-                                        <i class="fa-regular fa-user" style="font-size: 2.5em;"></i>
-                                        <br><br>
-                                        <span style="font-weight: 600; font-size: 1.1em;">Trucking Company</span>
+                                        <span style="font-weight: 600; font-size: 1.1em;">Puerto <br>TGN</span>
                                     </div>
                                 </div>
                             </div>
@@ -203,11 +138,11 @@
         </div>
         <ol class="breadcrumb float-end">
             <button class="btn btn-outline-primary mx-2">GUARDAR COMO BOR...</button>
-            <button class="btn btn-primary mx-2">SIGUIENTE</button>
+            <button class="btn btn-primary mx-2" onclick="window.location.href='RegistrarEmpresa4.html'">SIGUIENTE</button>
         </ol>
-        <div style="font-size: 1.2em;" class="m-3">
+        <button class="btn" style="font-size: 1.2em;" onclick="window.location.href='RegistrarEmpresa2.html'">
             <i class="fa fa-arrow-left" aria-hidden="true"></i> VOLVER...
-        </div>
+        </button>
     </div>
 </body>
 

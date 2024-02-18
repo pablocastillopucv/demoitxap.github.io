@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Unit Details</title>
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
+    <meta content="" name="description" />
+    <meta content="" name="author" />
+
+    <link href="../assets/css/vendor.min.css" rel="stylesheet" />
+    <link href="../assets/css/default/app.min.css" rel="stylesheet" />
+
+    <link href="css/styles.css" rel="stylesheet" />
+    <link rel="icon" href="data:,">
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            fetch("templates/AppHeader.html")
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById("headerContainer").innerHTML = data;
+                    includeFunctions();
+                });
+        });
+
+        function includeFunctions() {
+            var script = document.createElement('script');
+            script.src = 'js/functions.js';
+            document.body.appendChild(script);
+        }
+    </script>
+</head>
+
+<body style="background-color: rgb(243, 245, 247);">
+    <div id="headerContainer"></div>
+    <div id="sidebar" class="app-sidebar border-end border-secondary-subtle" data-bs-theme="light" style="z-index: 1;">
+        <div class="app-sidebar-content" data-scrollbar="true" data-height="100%">
+            <div class="menu">
+                <div class="menu-header" style="font-size: 1.15em; color: rgb(23, 60, 96); font-weight: 450;">
+                    Unit Approval
+                </div>
+                <div class="menu-header p-3">
+                    <button class="btn p-0" id="linkUnitApproval" onclick="window.location.href='UnitApproval1.html'">
+                        <i class="fa-solid fa-arrow-left" style="margin-right: 5px; font-size: 1.2em;"></i>Back to Unit Approval Search
+                    </button>
+                </div>
+                <hr>
+                <div class="menu-header">Overview</div>
+                <div class="menu-item active" style="margin: 0px 10px; border-left: solid rgb(23, 60, 96);">
+                    <a href="UnitApproval2.html" class="menu-link">
+                        <i class="fa-solid fa-boxes-stacked me-2"></i>
+                        <div class="menu-text">Unit Details</div>
+                    </a>
+                </div>
+                <div class="menu-item" style="margin: 0px 13px;">
+                    <a href="UnitApproval3.html" class="menu-link">
+                        <i class="fa-regular fa-file me-2"></i>
+                        <div class="menu-text">Documents</div>
+                    </a>
+                </div>
+                <div class="menu-item" style="margin: 0px 13px;">
+                    <a href="javascript:;" class="menu-link">
+                        <i class="fa-solid fa-clock-rotate-left me-2"></i>
+                        <div class="menu-text">Unit Audit</div>
+                    </a>
+                </div>
+                <div class="menu-item" style="margin: 0px 13px;">
+                    <a href="javascript:;" class="menu-link">
+                        <i class="fa-solid fa-message me-2"></i>
+                        <div class="menu-text">Comments</div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="content" class="app-content">
+        <h1 class="page-header">
+            Manage Import Unit <small>MSKU0716449 <span class="d-inline-flex align-items-center" style="background-color: rgb(209, 216, 223); height: 25px; width: 25px; border-radius: 50px;"><i class="fa-regular fa-hand" style="color: red; margin: auto;"></i></span></small>
+        </h1>
+        <div class="panel">
+            <div class="panel-body">
+                <div style="display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; color: rgb(23, 60, 96); margin: 10px; font-size: 0.8em;">
+                    <span>Container Number</span>
+                    <span>Ship/Voyage</span>
+                    <span>Delivery Type</span>
+                    <span>Unit Status</span>
+                </div>
+                <div style="display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; margin: 10px; margin-bottom: 20px;">
+                    <span>MSKU0716449</span>
+                    <span>POLAR COLOMBIA/4025</span>
+                    <span>Indirect</span>
+                    <span style="color: green; font-weight: 600;">YARD</span>
+                </div>
+                <div style="display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; color: rgb(23, 60, 96); margin: 10px; font-size: 0.8em;">
+                    <span>Process Status</span>
+                </div>
+                <div style="display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; margin: 10px; margin-bottom: 20px;">
+                    <span style="color: orange; font-weight: 600;">AWAITING APPROVAL</span>
+                </div>
+            </div>
+        </div>
+        <div class="panel">
+            <div class="panel-body">
+                <ol class="breadcrumb float-end">
+                    <i class="fa fa-angle-up" aria-hidden="true"></i>
+                </ol>
+                <h4 style="font-weight: 500; margin: 10px;">
+                    <i class="fa-solid fa-boxes-stacked"></i>
+                    Unit Details
+                </h4>
+                <div style="display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; color: rgb(23, 60, 96); margin: 10px; font-size: 0.8em;">
+                    <span>Bill of Lading</span>
+                    <span>Port of Loading</span>
+                    <span>Size Type (ISO)</span>
+                    <span>Weight (Kg)</span>
+                </div>
+                <div style="display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; margin: 10px; margin-bottom: 20px;">
+                    <span>MAEU233566959</span>
+                    <span>Balboa</span>
+                    <span>45G0</span>
+                    <span>25402.00</span>
+                </div>
+                <div style="display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; color: rgb(23, 60, 96); margin: 10px; font-size: 0.8em;">
+                    <span>Port of Discharge</span>
+                </div>
+                <div style="display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; margin: 10px; margin-bottom: 20px;">
+                    <span>San Antonio</span>
+                </div>
+
+                <h6 style="margin-left: 10px;">Withdrawal Request</h6>
+                <div style="display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; color: rgb(23, 60, 96); margin: 10px; font-size: 0.8em;">
+                    <span>RUT Number</span>
+                    <span>Business Name</span>
+                    <span>Address</span>
+                </div>
+                <div style="display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; margin: 10px; margin-bottom: 20px;">
+                    <span>965917306</span>
+                    <span>MARITIMA VALPARAISO - CHILE SPA</span>
+                    <span>-</span>
+                </div>
+                <div style="display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; color: rgb(23, 60, 96); margin: 10px; font-size: 0.8em;">
+                    <span>HS Code</span>
+                    <span>Inspection SAG</span>
+                </div>
+                <div style="display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; margin: 10px; margin-bottom: 20px;">
+                    <span>3034500 - Atunes comunes o de aleta azul 'Thunnus thynnus', congelados</span>
+                    <span>Yes</span>
+                </div>
+
+                <h6 style="margin-left: 10px;">Transporter</h6>
+                <div style="display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; color: rgb(23, 60, 96); margin: 10px; font-size: 0.8em;">
+                    <span>Transporter RUT number</span>
+                </div>
+                <div style="display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; margin: 10px; margin-bottom: 20px;">
+                    <span>-</span>
+                </div>
+                <hr>
+                <ol class="breadcrumb float-end mt-2">
+                    <button class="btn btn-primary mx-2">APPROVE</button>
+                    <button class="btn btn-outline-primary mx-2">REJECT</button>
+                </ol>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

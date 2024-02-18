@@ -1,0 +1,983 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Agregar Usuario</title>
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
+    <meta content="" name="description" />
+    <meta content="" name="author" />
+
+    <link href="../assets/css/vendor.min.css" rel="stylesheet" />
+    <link href="../assets/css/default/app.min.css" rel="stylesheet" />
+
+    <link href="css/styles.css" rel="stylesheet" />
+    <link rel="icon" href="data:,">
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            fetch("templates/AppHeader.html")
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById("headerContainer").innerHTML = data;
+                    includeFunctions();
+                });
+        });
+
+        function includeFunctions() {
+            var script = document.createElement('script');
+            script.src = 'js/functions.js';
+            document.body.appendChild(script);
+        }
+    </script>
+</head>
+
+<body>
+    <div id="headerContainer"></div>
+
+    <div id="content" class="app-content removeMargins">
+        <h1 class="page-header">Add User</h1>
+        <div class="panel border">
+            <div class="panel-heading demoPanelHeading">
+                About User
+            </div>
+            <div class="panel-body">
+                <div style="display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; column-gap: 20px;">
+                    <div style="padding: 4px;">
+                        <span style="font-size: 12px;">Company Name</span>
+                        <div style="margin: 8px;"></div>
+                        <span style="font-size: 1.2em; font-weight: 550;">Chile Terminal Operator</span>
+                    </div>
+                    <div class="form-floating">
+                        <input id="inp1" type="text" class="form-control fs-13px">
+                        <label for="inp1" class="d-flex align-items-center fs-13px">
+                            Email ID&nbsp;<span style="color: red;">*</span>
+                        </label>
+                    </div>
+                    <div class="form-floating">
+                        <select id="inp2" class="form-select">
+                            <option>Non Admin</option>
+                        </select>
+                        <label for="inp2" class="d-flex align-items-center fs-13px">
+                            User Type&nbsp;<span style="color: red;">*</span>
+                        </label>
+                    </div>
+                    <div class="form-floating">
+                        <input id="inp3" type="date" class="form-control fs-13px">
+                        <label for="inp3" class="d-flex align-items-center fs-13px">
+                            End Date
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="panel border">
+            <div class="panel-heading demoPanelHeading">
+                Copy User Permissions
+            </div>
+            <div class="panel-body">
+                <span>
+                    You can select a user (if available) to copy privileges or use the Custom Create option to assign
+                    privileges as required
+                </span>
+                <br><br>
+                <div style="display: grid; grid-template-columns: 2fr 2fr; column-gap: 20px;">
+                    <div class="form-floating">
+                        <input id="inp4" type="text" class="form-control fs-13px" value="Custom Create">
+                        <label for="inp4" class="d-flex align-items-center fs-13px">
+                            Select User Name or Custom Create &nbsp;<span style="color: red;">*</span>
+                        </label>
+                    </div>
+                </div>
+                <br>
+                <div>
+                    <input type="checkbox" id="inp5">
+                    <label for="inp5" style="font-size: 1.1em;">Review the copied rights and edit as required</label>
+                </div>
+            </div>
+        </div>
+        <div class="panel border">
+            <div class="panel-heading demoPanelHeading">
+                Grant Access ⓘ
+            </div>
+            <div class="panel-body">
+                <div style="display: grid; grid-template-columns: 1fr 3fr; column-gap: 20px;">
+                    <div class="form-floating">
+                        <select id="inp5" class="form-select fs-13px">
+                            <option>Department</option>
+                        </select>
+                        <label for="inp5" class="d-flex align-items-center fs-13px">
+                            Select User Name or Custom Create &nbsp;<span style="color: red;">*</span>
+                        </label>
+                    </div>
+                </div>
+                <div style="margin: 15px 0 10px 0;">
+                    <span style="font-size: 1.1em;">User Will have access to which level? ⓘ</span>
+                </div>
+                <div>
+                    <input type="radio" id="inp5" checked>
+                    <label for="inp5" style="font-size: 1.1em;">Company</label>
+                </div>
+            </div>
+        </div>
+        <div class="panel border">
+            <div class="panel-body">
+                <div style="margin-bottom: 15px;">
+                    <ol class="breadcrumb float-end">
+                        <i class="fa fa-angle-up" aria-hidden="true"></i>
+                    </ol>
+                    <span style="font-weight: 550; font-size: 1.2em;">Admin Rights ⓘ</span>
+                </div>
+                <div style="margin-bottom: 15px;">
+                    <ol class="breadcrumb float-end">
+                        <input type="checkbox" id="inp6" style="margin-right: 5px;">
+                        <label for="inp6">Select All</label>
+                    </ol>
+                    <span style="font-weight: 550; font-size: 1.25em;">Company & User Management Rights</span>
+                </div>
+                <div>
+                    <table class="table table-bordered table-striped">
+                        <thead>
+                            <th>Management</th>
+                            <th>
+                                <center><input type="checkbox" style="margin-right: 5px;">View</center>
+                            </th>
+                            <th>
+                                <center><input type="checkbox" style="margin-right: 5px;">Create</center>
+                            </th>
+                            <th>
+                                <center><input type="checkbox" style="margin-right: 5px;">Amend</center>
+                            </th>
+                            <th>
+                                <center><input type="checkbox" style="margin-right: 5px;">Delete</center>
+                            </th>
+                            <th>
+                                <center><input type="checkbox" style="margin-right: 5px;">Admin</center>
+                            </th>
+                            <th>
+                                <center><input type="checkbox" style="margin-right: 5px;">Activate/Deactivate</center>
+                            </th>
+                            <th>
+                                <center><input type="checkbox" style="margin-right: 5px;">Suspend</center>
+                            </th>
+                            <th>
+                                <center><input type="checkbox" style="margin-right: 5px;">View All</center>
+                            </th>
+                            <th>
+                                <center><input type="checkbox" style="margin-right: 5px;">Suspend/Unsuspend</center>
+                            </th>
+                            <th>
+                                <center><input type="checkbox" style="margin-right: 5px;">Approve/Reject</center>
+                            </th>
+                        </thead>
+                        <tbody>
+
+                            <tr>
+                                <td>
+                                    <div class="d-flex align-items-center justify-content-between">
+                                        <span>
+                                            Company Report
+                                        </span>
+                                        <ol class="breadcrumb float-end">
+                                            <input type="checkbox">
+                                        </ol>
+                                    </div>
+                                </td>
+                                <td>
+                                    <center><input type="checkbox"></center>
+                                </td>
+                                <td>
+                                    <center></center>
+                                </td>
+                                <td>
+                                    <center></center>
+                                </td>
+                                <td>
+                                    <center></center>
+                                </td>
+                                <td>
+                                    <center></center>
+                                </td>
+                                <td>
+                                    <center></center>
+                                </td>
+                                <td>
+                                    <center></center>
+                                </td>
+                                <td>
+                                    <center></center>
+                                </td>
+                                <td>
+                                    <center></center>
+                                </td>
+                                <td>
+                                    <center></center>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    <div class="d-flex align-items-center justify-content-between">
+                                        <span>
+                                            User Report
+                                        </span>
+                                        <ol class="breadcrumb float-end">
+                                            <input type="checkbox">
+                                        </ol>
+                                    </div>
+                                </td>
+                                <td>
+                                    <center><input type="checkbox"></center>
+                                </td>
+                                <td>
+                                    <center></center>
+                                </td>
+                                <td>
+                                    <center></center>
+                                </td>
+                                <td>
+                                    <center></center>
+                                </td>
+                                <td>
+                                    <center></center>
+                                </td>
+                                <td>
+                                    <center></center>
+                                </td>
+                                <td>
+                                    <center></center>
+                                </td>
+                                <td>
+                                    <center></center>
+                                </td>
+                                <td>
+                                    <center></center>
+                                </td>
+                                <td>
+                                    <center></center>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="d-flex align-items-center justify-content-between">
+                                        <span>
+                                            User Comments
+                                        </span>
+                                        <ol class="breadcrumb float-end">
+                                            <input type="checkbox">
+                                        </ol>
+                                    </div>
+                                </td>
+                                <td>
+                                    <center><input type="checkbox"></center>
+                                </td>
+                                <td>
+                                    <center><input type="checkbox"></center>
+                                </td>
+                                <td>
+                                    <center><input type="checkbox"></center>
+                                </td>
+                                <td>
+                                    <center><input type="checkbox"></center>
+                                </td>
+                                <td>
+                                    <center><input type="checkbox"></center>
+                                </td>
+                                <td>
+                                    <center></center>
+                                </td>
+                                <td>
+                                    <center></center>
+                                </td>
+                                <td>
+                                    <center></center>
+                                </td>
+                                <td>
+                                    <center></center>
+                                </td>
+                                <td>
+                                    <center></center>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="d-flex align-items-center justify-content-between">
+                                        <span>
+                                            User Management
+                                        </span>
+                                        <ol class="breadcrumb float-end">
+                                            <input type="checkbox">
+                                        </ol>
+                                    </div>
+                                </td>
+                                <td>
+                                    <center><input type="checkbox"></center>
+                                </td>
+                                <td>
+                                    <center><input type="checkbox"></center>
+                                </td>
+                                <td>
+                                    <center><input type="checkbox"></center>
+                                </td>
+                                <td>
+                                    <center></center>
+                                </td>
+                                <td>
+                                    <center><input type="checkbox"></center>
+                                </td>
+                                <td>
+                                    <center><input type="checkbox"></center>
+                                </td>
+                                <td>
+                                    <center><input type="checkbox"></center>
+                                </td>
+                                <td>
+                                    <center><input type="checkbox"></center>
+                                </td>
+                                <td>
+                                    <center></center>
+                                </td>
+                                <td>
+                                    <center></center>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="d-flex align-items-center justify-content-between">
+                                        <span>
+                                            Company Management
+                                        </span>
+                                        <ol class="breadcrumb float-end">
+                                            <input type="checkbox">
+                                        </ol>
+                                    </div>
+                                </td>
+                                <td>
+                                    <center><input type="checkbox"></center>
+                                </td>
+                                <td>
+                                    <center></center>
+                                </td>
+                                <td>
+                                    <center><input type="checkbox"></center>
+                                </td>
+                                <td>
+                                    <center></center>
+                                </td>
+                                <td>
+                                    <center></center>
+                                </td>
+                                <td>
+                                    <center></center>
+                                </td>
+                                <td>
+                                    <center></center>
+                                </td>
+                                <td>
+                                    <center><input type="checkbox"></center>
+                                </td>
+                                <td>
+                                    <center><input type="checkbox"></center>
+                                </td>
+                                <td>
+                                    <center><input type="checkbox"></center>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="d-flex align-items-center justify-content-between">
+                                        <span>
+                                            Company Comments
+                                        </span>
+                                        <ol class="breadcrumb float-end">
+                                            <input type="checkbox">
+                                        </ol>
+                                    </div>
+                                </td>
+                                <td>
+                                    <center><input type="checkbox"></center>
+                                </td>
+                                <td>
+                                    <center><input type="checkbox"></center>
+                                </td>
+                                <td>
+                                    <center><input type="checkbox"></center>
+                                </td>
+                                <td>
+                                    <center><input type="checkbox"></center>
+                                </td>
+                                <td>
+                                    <center></center>
+                                </td>
+                                <td>
+                                    <center></center>
+                                </td>
+                                <td>
+                                    <center></center>
+                                </td>
+                                <td>
+                                    <center></center>
+                                </td>
+                                <td>
+                                    <center></center>
+                                </td>
+                                <td>
+                                    <center></center>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="panel border">
+            <div class="panel-body">
+                <div style="margin-bottom: 15px;">
+                    <ol class="breadcrumb float-end">
+                        <i class="fa fa-angle-up" aria-hidden="true"></i>
+                    </ol>
+                    <span style="font-weight: 550; font-size: 1.2em;">
+                        Service Provider & Roles Selection ⓘ<span style="color: red;">*</span>
+                    </span>
+                </div>
+                <div style="margin-bottom: 60px;">
+                    <ol class="breadcrumb float-end d-flex align-items-center">
+                        <div>
+                            <select class="form-select">
+                                <option>Select Roles</option>
+                            </select>
+                        </div>
+                        <div class="ms-3">
+                            <input type="checkbox" id="inp6" style="margin-right: 5px;">
+                            <label for="inp6">Select All</label>
+                        </div>
+                    </ol>
+                </div>
+                <div>
+                    <table class="table table-bordered table-striped">
+                        <thead>
+                            <th style="width: 250px;">Service Provider ⓘ</th>
+                            <th>Roles Assigned To The User ⓘ</th>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <div class="d-flex align-items-center justify-content-between">
+                                        <span>
+                                            Chile Inland Services
+                                        </span>
+                                        <ol class="breadcrumb float-end">
+                                            <input type="checkbox" checked>
+                                        </ol>
+                                    </div>
+                                </td>
+                                <td><input type="checkbox" checked style="margin-right: 5px;">Terminal Operator</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <div class="panel border">
+            <div class="panel-body">
+                <div style="margin-bottom: 15px;">
+                    <ol class="breadcrumb float-end">
+                        <i class="fa fa-angle-up" aria-hidden="true"></i>
+                    </ol>
+                    <span style="font-weight: 550; font-size: 1.2em;">
+                        Service Rights
+                    </span>
+                </div>
+                <div style="margin-bottom: 40px;">
+                    <ol class="breadcrumb float-end d-flex align-items-center">
+                        <div class="ms-3">
+                            <input type="checkbox" id="inp6" style="margin-right: 5px;">
+                            <label for="inp6">Select All</label>
+                        </div>
+                    </ol>
+                </div>
+                <div>
+                    <table class="table table-bordered table-striped">
+                        <thead>
+                            <th>Service Provider </th>
+                            <th>
+                                <center>View<br><input type="checkbox"></center>
+                            </th>
+                            <th>
+                                <center>Amend<br><input type="checkbox"></center>
+                            </th>
+                            <th>
+                                <center>Approve<br><input type="checkbox"></center>
+                            </th>
+                            <th>
+                                <center>Cancel<br><input type="checkbox"></center>
+                            </th>
+                            <th>
+                                <center>Create<br><input type="checkbox"></center>
+                            </th>
+                            <th>
+                                <center>Approve / Reject<br><input type="checkbox"></center>
+                            </th>
+                            <th>
+                                <center>Direct Delivery Request<br><input type="checkbox"></center>
+                            </th>
+                            <th>
+                                <center>Download DRC<br><input type="checkbox"></center>
+                            </th>
+                            <th>
+                                <center>Search<br><input type="checkbox"></center>
+                            </th>
+                            <th>
+                                <center>Container Stripping Request<br><input type="checkbox"></center>
+                            </th>
+                            <th>
+                                <center>Amend GC<br><input type="checkbox"></center>
+                            </th>
+                            <th>
+                                <center>Create GC House BOL<br><input type="checkbox"></center>
+                            </th>
+                            <th>
+                                <center>View GC<br><input type="checkbox"></center>
+                            </th>
+                            <th>
+                                <center>Audit<br><input type="checkbox"></center>
+                            </th>
+                            <th>
+                                <center>Create/Amend<br><input type="checkbox"></center>
+                            </th>
+                            <th>
+                                <center>Action
+                            </th>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td style="align-items: center;">
+                                    <div class="d-flex justify-content-between">
+                                        <span>B2B Monitor</span><input type="checkbox">
+                                    </div>
+                                </td>
+                                <td>
+                                    <center>
+                                        <input type="checkbox">
+                                    </center>
+                                </td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td class="p-0">
+                                    <button class="btn">
+                                        <i class="fa-solid fa-pencil me-2"></i><span
+                                            style="color: rgb(42, 114, 181);">Settings</span>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="align-items: center;">
+                                    <div class="d-flex justify-content-between">
+                                        <span>Container Appointment</span><input type="checkbox">
+                                    </div>
+                                </td>
+                                <td>
+                                    <center>
+                                        <input type="checkbox">
+                                    </center>
+                                </td>
+                                <td>
+                                    <center>
+                                        <input type="checkbox">
+                                    </center>
+                                </td>
+                                <td>
+                                    <center>
+                                        <input type="checkbox">
+                                    </center>
+                                </td>
+                                <td>
+                                    <center>
+                                        <input type="checkbox">
+                                    </center>
+                                </td>
+                                <td>
+                                    <center>
+                                        <input type="checkbox">
+                                    </center>
+                                </td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td class="p-0">
+                                    <button class="btn">
+                                        <i class="fa-solid fa-pencil me-2"></i><span
+                                            style="color: rgb(42, 114, 181);">Settings</span>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="align-items: center;">
+                                    <div class="d-flex justify-content-between">
+                                        <span>Container Inquiry</span><input type="checkbox">
+                                    </div>
+                                </td>
+                                <td>
+                                    <center>
+                                        <input type="checkbox">
+                                    </center>
+                                </td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td class="p-0">
+                                    <button class="btn">
+                                        <i class="fa-solid fa-pencil me-2"></i><span
+                                            style="color: rgb(42, 114, 181);">Settings</span>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="align-items: center;">
+                                    <div class="d-flex justify-content-between">
+                                        <span>Defined Set</span><input type="checkbox">
+                                    </div>
+                                </td>
+                                <td>
+                                    <center>
+                                        <input type="checkbox">
+                                    </center>
+                                </td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td class="p-0">
+                                    <button class="btn">
+                                        <i class="fa-solid fa-pencil me-2"></i><span
+                                            style="color: rgb(42, 114, 181);">Settings</span>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="align-items: center;">
+                                    <div class="d-flex justify-content-between">
+                                        <span>Import Container Release</span><input type="checkbox">
+                                    </div>
+                                </td>
+                                <td>
+                                    <center>
+                                        <input type="checkbox">
+                                    </center>
+                                </td>
+                                <td>
+                                    <center>
+                                        <input type="checkbox">
+                                    </center>
+                                </td>
+                                <td></td>
+                                <td></td>
+                                <td>
+                                    <center>
+                                        <input type="checkbox">
+                                    </center>
+                                </td>
+                                <td></td>
+                                <td>
+                                    <center>
+                                        <input type="checkbox">
+                                    </center>
+                                </td>
+                                <td>
+                                    <center>
+                                        <input type="checkbox">
+                                    </center>
+                                </td>
+                                <td>
+                                    <center>
+                                        <input type="checkbox">
+                                    </center>
+                                </td>
+                                <td>
+                                    <center>
+                                        <input type="checkbox">
+                                    </center>
+                                </td>
+                                <td>
+                                    <center>
+                                        <input type="checkbox">
+                                    </center>
+                                </td>
+                                <td>
+                                    <center>
+                                        <input type="checkbox">
+                                    </center>
+                                </td>
+                                <td>
+                                    <center>
+                                        <input type="checkbox">
+                                    </center>
+                                </td>
+                                <td>
+                                    <center>
+                                        <input type="checkbox">
+                                    </center>
+                                </td>
+                                <td></td>
+                                <td class="p-0">
+                                    <button class="btn">
+                                        <i class="fa-solid fa-pencil me-2"></i><span
+                                            style="color: rgb(42, 114, 181);">Settings</span>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="align-items: center;">
+                                    <div class="d-flex justify-content-between">
+                                        <span>Service Announcement</span><input type="checkbox">
+                                    </div>
+                                </td>
+                                <td>
+                                    <center>
+                                        <input type="checkbox">
+                                    </center>
+                                </td>
+                                <td></td>
+                                <td></td>
+                                <td>
+                                    <center>
+                                        <input type="checkbox">
+                                    </center>
+                                </td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td>
+                                    <center>
+                                        <input type="checkbox">
+                                    </center>
+                                </td>
+                                <td class="p-0">
+                                    <button class="btn">
+                                        <i class="fa-solid fa-pencil me-2"></i><span
+                                            style="color: rgb(42, 114, 181);">Settings</span>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="align-items: center;">
+                                    <div class="d-flex justify-content-between">
+                                        <span>Timeslot Management</span><input type="checkbox">
+                                    </div>
+                                </td>
+                                <td>
+                                    <center>
+                                        <input type="checkbox">
+                                    </center>
+                                </td>
+                                <td>
+                                    <center>
+                                        <input type="checkbox">
+                                    </center>
+                                </td>
+                                <td></td>
+                                <td>
+                                    <center>
+                                        <input type="checkbox">
+                                    </center>
+                                </td>
+                                <td>
+                                    <center>
+                                        <input type="checkbox">
+                                    </center>
+                                </td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td class="p-0">
+                                    <button class="btn">
+                                        <i class="fa-solid fa-pencil me-2"></i><span
+                                            style="color: rgb(42, 114, 181);">Settings</span>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="align-items: center;">
+                                    <div class="d-flex justify-content-between">
+                                        <span>Timeslot Management</span><input type="checkbox">
+                                    </div>
+                                </td>
+                                <td>
+                                    <center>
+                                        <input type="checkbox">
+                                    </center>
+                                </td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td>
+                                    <center>
+                                        <input type="checkbox">
+                                    </center>
+                                </td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td class="p-0">
+                                    <button class="btn">
+                                        <i class="fa-solid fa-pencil me-2"></i><span
+                                            style="color: rgb(42, 114, 181);">Settings</span>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="align-items: center;">
+                                    <div class="d-flex justify-content-between">
+                                        <span>Timeslot Management (Shifts)</span><input type="checkbox">
+                                    </div>
+                                </td>
+                                <td>
+                                    <center>
+                                        <input type="checkbox">
+                                    </center>
+                                </td>
+                                <td>
+                                    <center>
+                                        <input type="checkbox">
+                                    </center>
+                                </td>
+                                <td></td>
+                                <td>
+                                    <center>
+                                        <input type="checkbox">
+                                    </center>
+                                </td>
+                                <td>
+                                    <center>
+                                        <input type="checkbox">
+                                    </center>
+                                </td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td class="p-0">
+                                    <button class="btn">
+                                        <i class="fa-solid fa-pencil me-2"></i><span
+                                            style="color: rgb(42, 114, 181);">Settings</span>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="align-items: center;">
+                                    <div class="d-flex justify-content-between">
+                                        <span>Unit Aproval</span><input type="checkbox">
+                                    </div>
+                                </td>
+                                <td>
+                                    <center>
+                                        <input type="checkbox">
+                                    </center>
+                                </td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td>
+                                    <center>
+                                        <input type="checkbox">
+                                    </center>
+                                </td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td class="p-0">
+                                    <button class="btn">
+                                        <i class="fa-solid fa-pencil me-2"></i><span
+                                            style="color: rgb(42, 114, 181);">Settings</span>
+                                    </button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <ol class="breadcrumb float-end mb-5">
+            <button class="btn btn-outline-primary mx-2" onclick="window.location.href='UserList.html'">BACK</button>
+            <button class="btn btn-outline-primary mx-2">RESET</button>
+            <button class="btn btn-primary mx-2" onclick="window.location.href='UserList.html'">ADD</button>
+        </ol>
+    </div>
+</body>
+
+</html>
